@@ -1,0 +1,22 @@
+# 二つのサーバーを同時に起動するデモ
+# 設定ファイルも個別に管理できます
+version: '3'
+services:
+  craftopia-server-01:
+    image: 
+    restart: always
+    ports:
+      - "6587:6587/udp"
+    volumes:
+      - type: bind
+        source: "./config/craftopia-server-01"
+        target: "/home/craftopia/.config/unity3d/PocketPair/Craftopia"
+  craftopia-server-02:
+    image: 
+    restart: always
+    ports:
+      - "6588:6587/udp"
+    volumes:
+      - type: bind
+        source: "./config/craftopia-server-02"
+        target: "/home/craftopia/.config/unity3d/PocketPair/Craftopia"

@@ -3,20 +3,18 @@
 version: '3'
 services:
   craftopia-server-01:
-    image: 
+    image: ghcr.io/chujohiroto/docker-craftopia:latest
     restart: always
     ports:
       - "6587:6587/udp"
     volumes:
-      - type: bind
-        source: "./config/craftopia-server-01"
-        target: "/home/craftopia/.config/unity3d/PocketPair/Craftopia"
+      - "./config/craftopia-server-01:/home/craftopia/.config/unity3d/PocketPair"
+      - "./config/craftopia-server-01/log:/var/log/craftopia"
   craftopia-server-02:
-    image: 
+    image: ghcr.io/chujohiroto/docker-craftopia:latest
     restart: always
     ports:
       - "6588:6587/udp"
     volumes:
-      - type: bind
-        source: "./config/craftopia-server-02"
-        target: "/home/craftopia/.config/unity3d/PocketPair/Craftopia"
+      - "./config/craftopia-server-02:/home/craftopia/.config/unity3d/PocketPair"
+      - "./config/craftopia-server-02/log:/var/log/craftopia"

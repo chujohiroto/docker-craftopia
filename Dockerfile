@@ -25,7 +25,9 @@ RUN mkdir /var/log/craftopia
 
 # 実行用ShellScriptの追加
 ADD run.sh /
+ADD entrypoint.sh /
 RUN chmod +x run.sh
+RUN chmod +x entrypoint.sh
 
 # rootで実行するのは危険なので、Craftopia用のユーザーを作成します
 RUN groupadd -g $GID $GROUPNAME && \
@@ -39,7 +41,7 @@ WORKDIR /home/$USERNAME/
 RUN /usr/games/steamcmd +login anonymous +app_update 1670340 -beta $VERSION validate +quit
 
 # run時に実行するコマンド　サーバーを起動してログを/var/log/craftopia/日付.logに書き込みます
-CMD /run.sh $UPDATE $VERSION 
+CMD /run.sh $UPDATE $VERSION
 
 # デフォルトの公開ポート　ポートの変更はDockerのポートフォワーディングで変更することを推奨します
 EXPOSE 6587/udp

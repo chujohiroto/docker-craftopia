@@ -46,3 +46,12 @@ docker build -t docker-craftopia .
 ```
 docker run -p 6587:6587/udp --name craftopia_server -it docker-craftopia:latest
 ```
+
+## TODO
+[ ] 開始時自動アップデート対応
+
+[ ] configのボリュームマウント
+
+[ ] docker composeサンプル対応
+
+[ ] 起動中自動アップデート対応

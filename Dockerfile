@@ -25,9 +25,7 @@ RUN mkdir /var/log/craftopia
 
 # 実行用ShellScriptの追加
 ADD run.sh /
-ADD entrypoint.sh /
 RUN chmod +x run.sh
-RUN chmod +x entrypoint.sh
 
 # rootで実行するのは危険なので、Craftopia用のユーザーを作成します
 RUN groupadd -g $GID $GROUPNAME && \

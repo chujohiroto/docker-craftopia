@@ -14,20 +14,20 @@ CraftopiaのLinux版専用サーバーのDockerImageです。
 
 最新バージョンのα版サーバー起動したい場合のコマンド
 ```
-docker run --detach -p 6587:6587/udp --name craftopia_server -it ghcr.io/chujohiroto/docker-craftopia:latest
+docker run --detach -v "craftopia-server:/home/craftopia/.config/unity3d/PocketPair" -p 6587:6587/udp --name craftopia-server -it ghcr.io/chujohiroto/docker-craftopia:latest
 ```
 
 ！**準備中**につきまだ使用できません！
 
 最新バージョンの安定版サーバーを起動したい場合のコマンド
 ```
-docker run --detach -p 6587:6587/udp --name craftopia_server -it ghcr.io/chujohiroto/docker-craftopia:stable
+docker run --detach -v config/craftopia-server:/home/craftopia/.config/unity3d/PocketPair -p 6587:6587/udp --name craftopia-server -it ghcr.io/chujohiroto/docker-craftopia:stable
 ```
 
 ## 停止方法
 ```
-docker stop craftopia_server
-docker rm craftopia_server 
+docker stop craftopia-server
+docker rm craftopia-server 
 ```
 
 ## 設定ファイルの場所
@@ -44,7 +44,7 @@ docker build -t docker-craftopia .
 
 ビルドしたコンテナイメージを実行する
 ```
-docker run -p 6587:6587/udp --name craftopia_server -it docker-craftopia:latest
+docker run -p 6587:6587/udp --name craftopia-server -it docker-craftopia:latest
 ```
 
 ## TODO

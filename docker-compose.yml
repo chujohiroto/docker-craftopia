@@ -1,5 +1,6 @@
 # 二つのサーバーを同時に起動するデモ
 # 設定ファイルも個別に管理できます
+# 事前に./config/craftopia-server-01 ./config/craftopia-server-02 のディレクトリを作成しておくことを推奨します
 version: '3'
 services:
   craftopia-server-01:

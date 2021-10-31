@@ -8,6 +8,10 @@ CraftopiaのLinux版専用サーバーのDockerImageです。
 
 2021年10月現在はα edge版のみ対応しています。
 
+**イメージ配布先**
+
+https://github.com/users/ChujoHiroto/packages/container/package/docker-craftopia
+
 # 使い方
 
 ## 起動方法

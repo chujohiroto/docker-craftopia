@@ -1,8 +1,8 @@
 # Ubuntuの安定版をベースイメージに使用します
 FROM ubuntu:20.04
 
-# 現在はα edgeのみLinux版専用サーバーを提供しています
-ARG VERSION=alpha-unstable-edge
+# 現在はα(alpha-unstable)とα edge(alpha-unstable-edge)のみLinux版専用サーバーを提供しています
+ARG VERSION=alpha-unstable
 ARG UPDATE=autoupdate
 
 # ユーザー情報

@@ -6,7 +6,7 @@ CraftopiaのLinux版専用サーバーのDockerImageです。
 
 ログは/var/log/craftopia/日付.logに書き込まれます。
 
-現在はα(alpha-unstable)とα edge(alpha-unstable-edge)のみ対応しています。
+現在はα(alpha-unstable)のみ対応しています。
 
 **イメージ配布先**
 

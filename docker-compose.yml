@@ -9,13 +9,15 @@ services:
     ports:
       - "6587:6587/udp"
     volumes:
-      - "./config/craftopia-server-01:/home/craftopia/.config/unity3d/PocketPair"
-      - "./config/craftopia-server-01/log:/var/log/craftopia"
+      - "./data/craftopia-server-01/ServerSetting.ini:/home/craftopia/.steam/steamapps/common/CraftopiaDedicatedServer/ServerSetting.ini"
+      - "./data/craftopia-server-01/DedicatedServerSave:/home/craftopia/.steam/steamapps/common/CraftopiaDedicatedServer/DedicatedServerSave"
+      - "./data/craftopia-server-01/log:/var/log/craftopia"
   craftopia-server-02:
     image: ghcr.io/chujohiroto/docker-craftopia:latest
     restart: always
     ports:
       - "6588:6587/udp"
     volumes:
-      - "./config/craftopia-server-02:/home/craftopia/.config/unity3d/PocketPair"
-      - "./config/craftopia-server-02/log:/var/log/craftopia"
+      - "./data/craftopia-server-02/ServerSetting.ini:/home/craftopia/.steam/steamapps/common/CraftopiaDedicatedServer/ServerSetting.ini"
+      - "./data/craftopia-server-02/DedicatedServerSave:/home/craftopia/.steam/steamapps/common/CraftopiaDedicatedServer/DedicatedServerSave"
+      - "./data/craftopia-server-02/log:/var/log/craftopia"

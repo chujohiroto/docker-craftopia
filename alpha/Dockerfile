@@ -1,6 +1,8 @@
 # Ubuntuの安定版をベースイメージに使用します
 FROM ubuntu:20.04
 
+ARG VERSION=alpha-unstable
+
 # ユーザー情報
 ARG USERNAME=craftopia
 ARG GROUPNAME=craftopia
@@ -32,10 +34,10 @@ USER $USERNAME
 WORKDIR /home/$USERNAME/
 
 # Craftopiaをインストールして検証します
-RUN /usr/games/steamcmd +login anonymous +app_update 1670340 validate +quit
+RUN /usr/games/steamcmd +login anonymous +app_update 1670340 -beta $VERSION validate +quit
 
 # run時に実行するコマンド　サーバーを起動してログを/var/log/craftopia/日付.logに書き込みます
-CMD /run.sh
+CMD /run.sh $VERSION
 
 # デフォルトの公開ポート　ポートの変更はDockerのポートフォワーディングで変更することを推奨します
 EXPOSE 6587/udp

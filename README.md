@@ -16,25 +16,23 @@ https://github.com/users/ChujoHiroto/packages/container/package/docker-craftopia
 
 ## 起動方法
 
+最新バージョンのサーバーを起動したい場合のコマンド
+```
+docker run --detach -v config/craftopia-server:/home/craftopia/.config/unity3d/PocketPair -p 6587:6587/udp --name craftopia-server -it ghcr.io/chujohiroto/docker-craftopia:latest
+```
+
 最新バージョンのα版サーバー起動したい場合のコマンド
 ```
-docker run --detach -v "craftopia-server:/home/craftopia/.config/unity3d/PocketPair" -p 6587:6587/udp --name craftopia-server -it ghcr.io/chujohiroto/docker-craftopia:latest
+docker run --detach -v "craftopia-server:/home/craftopia/.config/unity3d/PocketPair" -p 6587:6587/udp --name craftopia-server -it ghcr.io/chujohiroto/docker-craftopia:alpha
 ```
 
-！**準備中**につきまだ使用できません！
-
-最新バージョンの安定版サーバーを起動したい場合のコマンド
-```
-docker run --detach -v config/craftopia-server:/home/craftopia/.config/unity3d/PocketPair -p 6587:6587/udp --name craftopia-server -it ghcr.io/chujohiroto/docker-craftopia:stable
-```
-
-## 停止方法
+## 停止、および削除方法
 ```
 docker stop craftopia-server
 docker rm craftopia-server 
 ```
 
-## 設定ファイルの場所
+## 設定ファイル、セーブデータの場所
 上記のコマンドで実行した場合は、ホストマシンの./Craftopiaに保存され同期されます。
 
 # 開発者向け

@@ -34,6 +34,9 @@ WORKDIR /home/$USERNAME/
 # Craftopiaをインストールして検証します
 RUN /usr/games/steamcmd +login anonymous +app_update 1670340 validate +quit
 
+# 起動してiniだけ生成する
+RUN timeout 10 .steam/steamapps/common/CraftopiaDedicatedServer/Craftopia.x86_64
+
 # run時に実行するコマンド　サーバーを起動してログを/var/log/craftopia/日付.logに書き込みます
 CMD /run.sh
 

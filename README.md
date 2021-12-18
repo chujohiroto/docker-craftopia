@@ -50,10 +50,12 @@ docker run -p 6587:6587/udp --name craftopia-server -it docker-craftopia:latest
 ```
 
 ## TODO
-[ ] 開始時自動アップデート対応
+[x] 開始時自動アップデート対応
 
-[ ] configのボリュームマウント
+[x] configのボリュームマウント
 
-[ ] docker composeサンプル対応
+[x] docker composeサンプル対応
 
 [ ] 起動中自動アップデート対応
+
+[ ] BeplnExイメージの頒布
